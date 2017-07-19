@@ -1,0 +1,24 @@
+{
+  "name": "albumapi",
+  "version": "1.0.0",
+  "description": "albums descripstions",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }, 
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "body-parser": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/El700/albumAPI.git"
+  },
+  "author": "Emmanuel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/El700/albumAPI/issues"
+  },
+  "homepage": "https://github.com/El700/albumAPI#readme"
+}
