@@ -39,11 +39,20 @@ app.post('/albums', function(req, res) {
   })
 });
 
-//Album.findOne({title:album.title}, function(err, album)
-//  { 
-//      album = new AlbumSchema();
-//      album.title = request.loveTrain;
-//  
-//    });
+app.patch('/albums/:id', function(req, res) {
+ Album.findOneAndUpdate({
+   _id: req.params.id   
+   },
+   { $set: { price: req.body.price}
+ }, {upsert: true}, function(err, newAlbum) {
+   if (err) {
+     res.send('error updating ');
+   } else {
+     console.log(newAlbum);
+     res.send(newAlbum);
+   }
+ });
+});
+
 
 app.listen(port);
