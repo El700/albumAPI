@@ -54,5 +54,18 @@ app.patch('/albums/:id', function(req, res) {
  });
 });
 
+app.delete('/albums/:id', function(req, res) {
+ Album.findOneAndRemove({
+   _id: req.params.id
+ }, function(err, deleteAlbum) {
+   if(err) {
+     res.send('error removing')
+   } else {
+     console.log(deleteAlbum);
+     res.status(204);
+     res.send(deleteAlbum);
+   }
+ });
+});
 
 app.listen(port);
